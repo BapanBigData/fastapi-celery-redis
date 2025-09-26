@@ -73,7 +73,8 @@ alembic upgrade head
 - **Celery Worker**:
 
   ```bash
-  celery -A src.app.utils.celery_tasks.celery worker --loglevel=info
+  celery -A src.app.utils.celery_tasks worker --loglevel=info  `[on Linux in Production]`
+  celery -A src.app.utils.celery_tasks worker -P solo -l info -E  `[on Windows in development]`
   ```
 
 - **FastAPI App**:
